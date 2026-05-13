@@ -26,6 +26,23 @@ This software is proprietary and intended for personal and performance use only.
 
 <body>
 
+  <div id="passwordGate" class="password-gate">
+  <div class="gate-box">
+    <h2>Enter Password</h2>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Password..."
+      autocomplete="off"
+    />
+
+    <button onclick="checkPassword()">Enter</button>
+
+    <p id="passwordError" class="error"></p>
+  </div>
+</div>
+
 <header class="header">
   <h1>LyricStage</h1>
   <p>Choose a mode to begin</p>
@@ -66,5 +83,27 @@ This software is proprietary and intended for personal and performance use only.
 
 
 </main>
+
+  <script>
+  const CORRECT_PASSWORD = "8765432"; // <-- change this
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    const error = document.getElementById("passwordError");
+
+    if (input === CORRECT_PASSWORD) {
+      document.getElementById("passwordGate").style.display = "none";
+    } else {
+      error.textContent = "Incorrect password";
+    }
+  }
+
+  // Optional: press Enter to submit
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      checkPassword();
+    }
+  });
+</script>
 </body>
 </html>
