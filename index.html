@@ -86,7 +86,20 @@ This software is proprietary and intended for personal and performance use only.
 
   <script>
   const CORRECT_PASSWORD = "8765432"; // <-- change this
+    
+  function fixViewportHeight() {
+    const gate = document.getElementById("passwordGate");
 
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    if (gate) {
+      gate.style.height = window.innerHeight + "px";
+    }  
+  }
+
+  window.addEventListener("resize", fixViewportHeight);
+  window.addEventListener("load", fixViewportHeight);
   function checkPassword() {
     const input = document.getElementById("passwordInput").value;
     const error = document.getElementById("passwordError");
