@@ -113,7 +113,7 @@ body {
   height: 100vh;   /* fallback */
   height: 100dvh;  /* ✅ modern mobile fix (Android Chrome) */
   height: calc(var(--vh, 1vh) * 100);
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,1);
   
   display: flex;
   align-items: center;
