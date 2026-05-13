@@ -1,0 +1,371 @@
+
+
+<!-- ================================================================
+LIVE KARAOKE STUDIO WEB PLAYER
+Copyright © 2026 Billy Lee. All rights reserved.
+
+Designed and developed by Billy Lee.
+This project is proprietary software intended for karaoke lyric display,
+real-time typography control, and performance styling tools.
+================================================================ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Original Songs Viewer</title>
+  <link rel="stylesheet" href="../css/styleOriginals.css">
+</head>
+
+<body>
+
+<!-- ================================================================
+============================== SCRIPTS ==============================
+================================================================= -->
+
+<script>
+  let currentSize = 36; // default font size
+  let baseSize = 36;
+  let sizeStep = 2;
+  let currentSizeMultiplier = 1;
+  const baseSizes = {
+    section: 22,
+    note: 24,
+    action: 24,
+    verse: 36,
+    chorus: 36,
+    chorusrepeat: 36
+  };
+
+  let sizeOffset = 0;
+
+  //Change Font Size
+  function changeFontSize(change, e) {
+    sizeOffset += change > 0 ? 2 : -2;
+    sizeOffset = Math.max(-10, Math.min(10, sizeOffset));
+
+    applyTextSizes();
+
+    if (e) {
+      clearActive(".font-size-group button");
+      e.target.classList.add("active");
+    }
+  }
+
+  function applyTextSizes() {
+    document.querySelectorAll(".section").forEach(el => {
+      el.style.fontSize = (baseSizes.section + sizeOffset) + "px";
+    });
+
+    document.querySelectorAll(".note").forEach(el => {
+      el.style.fontSize = (baseSizes.note + sizeOffset) + "px";
+    });
+
+    document.querySelectorAll(".action").forEach(el => {
+      el.style.fontSize = (baseSizes.action + sizeOffset) + "px";
+    });
+
+    document.querySelectorAll(".verse").forEach(el => {
+      el.style.fontSize = (baseSizes.verse + sizeOffset) + "px";
+    });
+
+    document.querySelectorAll(".chorus").forEach(el => {
+      el.style.fontSize = (baseSizes.chorus + sizeOffset) + "px";
+    });
+
+    document.querySelectorAll(".chorusrepeat").forEach(el => {
+      el.style.fontSize = (baseSizes.chorusrepeat + sizeOffset) + "px";
+    });
+  }
+
+  window.onload = () => {
+    // Theme + Font
+    document.querySelector(".theme-group button").classList.add("active");
+    document.querySelector(".font-group button").classList.add("active");
+
+    // Line spacing default
+    document.body.style.lineHeight = "1.5";
+    document.querySelector(".lspacing button").classList.add("active");
+
+    // Character spacing default
+    document.body.style.letterSpacing = "0px";
+    document.querySelector(".cspacing button").classList.add("active");
+  }
+
+  // <!-- ######## CHANGE FONT COLOR ######### -->
+  function setTheme(theme, e) {
+    const body = document.body;
+
+    if (theme === 'default') {
+      body.style.background = 'black';
+      document.querySelectorAll('.verse').forEach(el => el.style.color = 'white');
+    }
+
+    if (theme === 'warm') {
+      body.style.background = '#0a0a0a';
+      document.querySelectorAll('.verse').forEach(el => el.style.color = '#FFD966');
+    }
+
+    if (theme === 'highcontrast') {
+      body.style.background = 'black';
+      document.querySelectorAll('.verse').forEach(el => el.style.color = '#00FF00');
+    }
+
+    clearActive(".theme-group button");
+    e.target.classList.add("active");
+  }
+
+  function setFont(font, e) {
+    let fontFamily = "Arial";
+
+    if (font === "verdana") fontFamily = "Verdana";
+    if (font === "mono") fontFamily = "Courier New";
+
+    document.querySelectorAll(`
+      .verse,
+      .chorus,
+      .chorusrepeat,
+      .note,
+      .action,
+      .section
+    `).forEach(el => {
+      el.style.fontFamily = fontFamily;
+    });
+
+    if (e) {
+      clearActive(".font-group button");
+      e.target.classList.add("active");
+    }
+  }
+  function togglePanel() {
+    document.getElementById("controlPanel").classList.toggle("open");
+  }
+
+  function openPanel() {
+    document.getElementById("controlPanel").classList.add('open');
+  }
+
+  function closePanel() {
+    document.getElementById("controlPanel").classList.remove('open');
+  }
+
+  /** Make background click close side panel **/
+  document.addEventListener("click", function (e) {
+    const panel = document.getElementById("controlPanel");
+
+    if (!panel.classList.contains("open")) return;
+
+    const clickedInside = panel.contains(e.target);
+    const clickedToggle = e.target.closest(".icon-btn");
+
+    if (!clickedInside && !clickedToggle) {
+      panel.classList.remove("open");
+    }
+  });
+
+  /* ACTIVE STATE HELPERS */
+  function clearActive(group) {
+    document.querySelectorAll(group).forEach(btn => btn.classList.remove("active"));
+  }
+
+  /* LINE SPACING */
+  function setLineSpacing(value, e) {
+    document.querySelectorAll(`
+      .verse,
+      .chorus,
+      .chorusrepeat,
+      .note,
+      .action,
+      .section
+    `).forEach(el => {
+      el.style.lineHeight = value;
+    });
+
+    if (e) {
+      clearActive(".lspacing button");
+      e.target.classList.add("active");
+    }
+  }
+
+  /* CHARACTER SPACING */
+  function setCharSpacing(value, e) {
+    document.querySelectorAll(`
+      .verse,
+      .chorus,
+      .chorusrepeat,
+      .note,
+      .action,
+      .section
+    `).forEach(el => {
+      el.style.letterSpacing = value;
+    });
+
+    if (e) {
+      clearActive(".cspacing button");
+      e.target.classList.add("active");
+    }
+  }
+
+</script>
+
+<!-- ================================================================
+========================== END OF SCRIPTS ===========================
+================================================================= -->
+
+<!-- ================================================================
+============================= TOP BAR ===============================
+================================================================= -->
+
+<!-- TOP BAR START -->
+<div class="top-bar">
+
+  <!-- BACK BUTTON -->
+  <a href="../originalsIndex.html" class="back-button">⬅ BACK</a>
+
+  <!-- SONG TITLE & ARTIST -->
+  <div class="title" id="songTitle">Loading...</div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="font-buttons">
+      <!----- Font Size ----->
+      <button onclick="changeFontSize(2)">A+</button>
+      <button onclick="changeFontSize(-2)">A-</button>
+    </div>
+    <!-- Menu Button -->
+    <button class="icon-btn" onclick="togglePanel()">⚙ Controls</button>
+  </div>
+
+  <!-- Slide Panel -->
+  <div id="controlPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel()">✖</button>
+
+    <h2>Settings</h2>
+
+    <h3>Theme</h3>
+    <div class="theme-group">
+      <button onclick="setTheme('default', event)">Default</button>
+      <button onclick="setTheme('warm', event)">Warm</button>
+      <button onclick="setTheme('highcontrast', event)">High Contrast</button>
+    </div>
+
+    <h3>Font</h3>
+    <div class="font-group">
+      <button onclick="setFont('verdana', event)">Default</button>
+      <button onclick="setFont('arial', event)">Arial</button>
+      <button onclick="setFont('mono', event)">Mono</button>
+    </div>
+
+    <h3>Line Spacing</h3>
+    <div class="lspacing">
+      <button onclick="setLineSpacing(1.5, event)">Default</button>
+      <button onclick="setLineSpacing(1.75, event)">Loose</button>
+      <button onclick="setLineSpacing(2, event)">Looser</button>
+    </div>
+
+    <h3>Character Spacing</h3>
+    <div class="cspacing">
+      <button onclick="setCharSpacing('0px', event)">Default</button>
+      <button onclick="setCharSpacing('0.5px', event)">Wide</button>
+      <button onclick="setCharSpacing('1px', event)">Wider</button>
+    </div>
+
+  </div><!-- End Side Panel -->
+</div>
+<!-- END TOP BAR -->
+<!-- ================================================================
+========================= END OF TOP BAR ============================
+================================================================= -->
+
+
+<!-- ================================================================
+======================== MAIN LYRICS CONTENT ========================
+================================================================= -->
+
+<div id="lyrics-container" class="lyrics-container">
+
+<script>
+function loadSong() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) {
+    document.getElementById("songTitle").textContent = "No song selected";
+    return;
+  }
+
+  // Create script tag dynamically
+  const script = document.createElement("script");
+  script.src = `originals-data/${id}.js`;
+
+  script.onload = () => {
+    if (!window.songData) {
+      document.getElementById("songTitle").textContent = "Song data missing";
+      return;
+    }
+
+    document.getElementById("songTitle").textContent =
+      `${songData.title} - ${songData.artist}`;
+
+    renderLyrics(songData.lyrics);
+  };
+
+  script.onerror = () => {
+    document.getElementById("songTitle").textContent = "Song not found";
+  };
+
+  document.body.appendChild(script);
+}
+
+function renderLyrics(blocks) {
+  const container = document.getElementById("lyrics-container");
+  container.innerHTML = "";
+
+  blocks.forEach(block => {
+
+    if (
+      block.type === "section-seperator" ||
+      block.type === "blank-seperator"
+    ) {
+      const div = document.createElement("div");
+      div.className = block.type;
+      container.appendChild(div);
+      return;
+    }
+
+    const div = document.createElement("div");
+    div.className = block.type;
+
+    if (block.text) {
+      div.textContent = block.text;
+    }
+
+    if (block.lines) {
+      div.innerHTML = block.lines
+        .map(line =>
+          line === ""
+            ? '<div class="mini-gap"></div>'
+            : line
+        )
+        .join("<br>");
+    }
+
+    container.appendChild(div);
+  });
+}
+
+loadSong();
+</script>
+
+</div>
+
+<!-- ================================================================
+===================== END OF MAIN LYRICS CONTENT ====================
+================================================================= -->
+
+</body>
+</html>
+
+
+

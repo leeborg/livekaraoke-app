@@ -1,0 +1,82 @@
+// chords-song-data.js
+// generated: 12-5-26
+// version file: 01
+
+const songs = [
+  {
+    title: "All the small things",
+    artist: "Blink 182",
+    url: "chords/song.html?id=allthesmallthings",
+    year: 1999,
+    bpm: 149,
+    gender: "Male",
+    genre: "Rock",
+    vibe: "Party",
+    energy: "High",
+    energyPeak: "Building",
+    crowdFunction: "Dance",
+    vocalDemand: "Easy",
+    setPosition: "Mid Set",
+    reliabilityScore: "Risky",
+    venueFit: "Small Acoustic",
+    setFrequency: "rare",
+    hasLyrics: true
+  },
+  {
+    title: "Wicked Game",
+    artist: "HIM / Chris Isaak",
+    url: "chords/song.html?id=wickedgame",
+    year: 1989,
+    bpm: 120,
+    gender: "Male",
+    genre: "Rock",
+    vibe: "Dark",
+    energy: "Medium High",
+    energyPeak: "Building",
+    crowdFunction: "Dance",
+    vocalDemand: "Hard",
+    setPosition: "Closer",
+    reliabilityScore: "Risky",
+    venueFit: "Arena style",
+    setFrequency: "rare",
+    hasLyrics: true
+  },
+  {
+    title: "Wonderwall",
+    artist: "Oasis",
+    url: "chords/song.html?id=wonderwall",
+    year: 1995,
+    bpm: 87,
+    gender: "Male",
+    genre: "Rock",
+    vibe: "Drama",
+    energy: "Medium Low",
+    energyPeak: "Drop",
+    crowdFunction: "Background",
+    vocalDemand: "Medium",
+    setPosition: "Peak",
+    reliabilityScore: "Risky",
+    venueFit: "Pub",
+    setFrequency: "overused",
+    hasLyrics: true
+  },
+  {
+    title: "Zombie",
+    artist: "Cranberries, The",
+    url: "chords/song.html?id=zombie",
+    year: 1993,
+    bpm: 81,
+    gender: "Female",
+    genre: "Rock",
+    vibe: "Anthem",
+    energy: "Medium",
+    energyPeak: "Building",
+    crowdFunction: "Background",
+    vocalDemand: "Extreme",
+    setPosition: "Mid Set",
+    reliabilityScore: "Risky",
+    venueFit: "Arena style",
+    setFrequency: "overused",
+    hasLyrics: true
+  }
+];

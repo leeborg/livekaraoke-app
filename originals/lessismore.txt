@@ -1,0 +1,121 @@
+ID: "zzz_01Lessismore"
+TITLE: "zzz_01 Less is more"
+ARTIST: "Original"
+
+[NOTE: "INTRO Instrumental"]
+
+[SECTION: "VERSE 1" TYPE: "verse"]
+I took one more, then one more again
+Now the table’s got my name on the edge
+Too much of a good thing, I’ve learned
+Leaves you full but still unsatisfied
+
+[SECTION: "PRECHORUS" TYPE: "chorus"]
+My hands were busy, my mind was loud
+Chasing that extra, crossing it out
+You can call it want, you can call it pride
+Either way, it gets a little wild
+
+[SECTION: "CHORUS" TYPE: "chorusrepeat"]
+Less is more, less is more
+I don’t need that heavy load
+Less is more, less is more
+Keep it close and let it go
+(Less is more)
+
+[SECTION: "" TYPE: "section-seperator"]
+[NOTE: "(   )"]
+
+[SECTION: "VERSE 2" TYPE: "verse"]
+I bit off more than my mouth could hold
+Gave away the part that made me whole
+Now I see it in the morning light
+Some things shine when you leave them alone
+
+[SECTION: "PRECHORUS" TYPE: "chorus"]
+My hands were busy, my mind was loud
+Chasing that extra, crossing it out
+You can call it want, you can call it pride
+Either way, it gets a little wild
+
+[SECTION: "CHORUS" TYPE: "chorusrepeat"]
+Less is more, less is more
+I don’t need that heavy load
+Less is more, less is more
+Keep it close and let it go
+(Less is more)
+
+[SECTION: "(Acoustic Guitar Solo)" TYPE: "action"]
+
+[SECTION: "" TYPE: "section-seperator"]
+
+[SECTION: "BRIDGE" TYPE: "chorus"]
+Ooohh oohh oohh
+Ooohh oohh oohh
+""
+I was drowning in the overflow
+Now I leave a little room to grow
+
+[NOTE: "(not sure where the solo goes yet)"]
+
+[SECTION: "CHORUS" TYPE: "chorusrepeat"]
+Less is more, less is more
+I don’t need that heavy load
+Less is more, less is more
+Keep it close and let it go
+(Less is more)
+
+[SECTION: "CHORUS" TYPE: "chorusrepeat"]
+Less is more, less is more...
+Less is more, less is more...
+""
+Less is more, less is more...
+Less is more, less is more...
+
+[NOTE: "(outro)"]
+
+
+[SECTION: "[ END ]" TYPE: "action"]
+
+
+==========================================================================
+==========================================================================
+==========================================================================
+============================ NOTES / COMMANDS ============================
+==========================================================================
+==========================================================================
+==========================================================================
+
+[NOTE: "INTRO Instrumental (wait for signal)"]
+
+[NOTE: "(wait for count:)"]
+[NOTE: "- ( 1.. 2.. ____ 1, 2, 3, 4) -"]
+
+
+[SECTION: "VERSE 1" TYPE: "verse"]
+
+[SECTION: "VERSE 1 (CONT.)" TYPE: "verse"]
+
+[SECTION: "PRECHORUS" TYPE: "chorusrepeat"]
+[SECTION: "CHORUS" TYPE: "chorus"]
+
+[NOTE: "Instrumental (wait for signal)"]
+
+[SECTION: "(Guitar Solo)" TYPE: "action"]
+[NOTE: "(wait for signal)"]
+
+[SECTION: "CHORUS REPEAT" TYPE: "chorusrepeat"]
+[SECTION: "ENDING" TYPE: "chorusrepeat"]
+
+[SECTION: "" TYPE: "section-seperator"]
+[NOTE: "Instrumental (wait for signal)"]
+
+[SECTION: "[ END ]" TYPE: "action"]
+
+
+
+
+
+
+
+

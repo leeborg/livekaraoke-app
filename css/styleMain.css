@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 42px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.header p {
+  color: #888;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* MENU WRAPPER */
+.menu {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* BIG BUTTONS */
+.big-button {
+  width: 220px;
+  height: 120px;
+  gap: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.3;
+
+  border-radius: 12px;
+  border: 2px solid #444;
+
+  transition: 0.3s ease;
+  user-select: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/* LYRICS BUTTON */
+.big-button.lyrics {
+  background: #111;
+  color: #00ffcc;
+  box-shadow: 0 8px 25px rgba(0, 255, 204, 0.25);
+}
+
+/* CHORDS BUTTON */
+.big-button.chords {
+  background: #111;
+  color: #ffd166;
+  box-shadow: 0 8px 25px rgba(255, 209, 102, 0.25);
+}
+
+/* SOLO PERFORMANCE BUTTON */
+.big-button.solo {
+  background: #111;
+  color: #00a1c9;
+  box-shadow: 0 8px 25px rgba(0, 255, 204, 0.25);
+}
+
+/* BAND PERFORMANCE BUTTON */
+.big-button.band {
+  background: #111;
+  color: #ffaa00;
+  box-shadow: 0 8px 25px rgba(255, 209, 102, 0.25);
+}
+
+/* HOVER EFFECT */
+.big-button:hover {
+  transform: scale(1.05);
+  border-color: #888;
+  color: #ffffff;
+  transform: translateY(-0.7px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease;
+}
+
+/* ACTIVE CLICK EFFECT */
+.big-button:active {
+  transform: scale(0.98);
+}
