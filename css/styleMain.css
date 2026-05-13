@@ -106,7 +106,7 @@ body {
   transform: scale(0.98);
 }
 
-  .password-gate {
+.password-gate {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,1);
